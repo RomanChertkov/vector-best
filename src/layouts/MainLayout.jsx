@@ -1,4 +1,4 @@
-import { Container } from '@mui/material'
+import { Container, Box } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 import AppHeader from '../components/AppHeader'
 
@@ -7,7 +7,9 @@ export default function MainLayout() {
     <>
       <AppHeader />
       <Container>
-        <Outlet />
+        <Box sx={{ padding: 3 }}>
+          <Outlet />
+        </Box>
       </Container>
     </>
   )
