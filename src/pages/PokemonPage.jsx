@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Button, Grid, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 export default function PokemonPage(props) {
   const navigate = useNavigate()
