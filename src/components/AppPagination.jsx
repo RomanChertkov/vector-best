@@ -1,9 +1,20 @@
 import { Typography, Pagination, Stack, Select, MenuItem } from '@mui/material'
 
-export default function AppPagination(props) {
+export default function AppPagination({
+  itemsPerPage,
+  currentPage,
+  changePage,
+  changeItemPerPage,
+}) {
   return (
     <Stack direction="row" justifyContent={'space-between'}>
-      <Pagination count={10} size="large" color="primary" />
+      <Pagination
+        count={10}
+        page={currentPage}
+        size="large"
+        color="primary"
+        onChange={(e, page) => changePage(page)}
+      />
 
       <Stack direction="row" spacing={3} alignItems="center">
         <Typography variant="body1" component="div">
@@ -13,8 +24,8 @@ export default function AppPagination(props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={10}
-          // label="Age"
+          value={itemsPerPage}
+          onChange={(e, obj) => changeItemPerPage(obj)}
           inputProps={{ 'aria-label': 'Without label' }}
           size="small"
         >
