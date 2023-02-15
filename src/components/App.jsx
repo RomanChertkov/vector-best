@@ -9,7 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="pokemon" element={<PokemonPage />} />
+        <Route path="pokemon/:id" element={<PokemonPage />} />
         <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>

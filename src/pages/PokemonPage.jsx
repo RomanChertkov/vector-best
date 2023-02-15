@@ -1,21 +1,25 @@
-import { Button, Grid, Typography } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { Button, Grid, Stack, Typography, Card } from '@mui/material'
+import { useNavigate, useParams } from 'react-router-dom'
+
 export default function PokemonPage(props) {
   const navigate = useNavigate()
+  const { id: pokemonId } = useParams()
+
   return (
     <>
-      <Grid container justifyContent="space-between" alignItems="center">
-        <Grid item>
-          <Typography variant="h3" component="h2">
-            PokemonPage
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Button onClick={() => navigate('/')} variant="outlined">
-            Назад
-          </Button>
-        </Grid>
-      </Grid>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Typography variant="h3" component="h2">
+          PokemonPage {pokemonId}
+        </Typography>
+
+        <Button onClick={() => navigate('/')} variant="outlined">
+          Назад на главную
+        </Button>
+
+        <Stack spacing={2}>
+          <Card></Card>
+        </Stack>
+      </Stack>
     </>
   )
 }
