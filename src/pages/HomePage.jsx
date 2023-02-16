@@ -5,7 +5,7 @@ import {
   setCurrentPage,
   setItemsPerPage,
 } from '../store/pagination/paginationActionCreators'
-import { getPokemonData } from '../store/pokemons/pokemonsActionCreators'
+import { getPokemonsData } from '../store/pokemons/pokemonsActionCreators'
 import AppPagination from '../components/common/AppPagination'
 import PokemonsList from '../components/Home/PokemonsList'
 import SkeletonList from '../components/Home/SkeletonList'
@@ -18,11 +18,11 @@ export default function HomePage() {
   const { pokemons, isDataFetching } = useSelector((state) => state.pokemons)
 
   useEffect(() => {
-    dispatch(getPokemonData(currentPage, itemsPerPage))
+    dispatch(getPokemonsData(currentPage, itemsPerPage))
   }, [])
 
   useEffect(() => {
-    dispatch(getPokemonData(currentPage, itemsPerPage))
+    dispatch(getPokemonsData(currentPage, itemsPerPage))
   }, [currentPage, itemsPerPage])
 
   function changePage(page) {

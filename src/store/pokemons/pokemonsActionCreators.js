@@ -12,7 +12,7 @@ export const setPokemonsData = (pokemonData) => ({
   payload: pokemonData,
 })
 
-export const getPokemonData =
+export const getPokemonsData =
   (currentPage, itemsPerPage) => async (dispatch) => {
     try {
       const offset = currentPage * itemsPerPage
