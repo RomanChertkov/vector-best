@@ -12,5 +12,5 @@ export const setItemsPerPage = (newValue) => ({
 
 export const setTotalApItems = (totalApiItems) => ({
   type: paginationTypes.SET_TOTAL_API_ITEMS,
-  totalApiItems,
+  payload: totalApiItems,
 })

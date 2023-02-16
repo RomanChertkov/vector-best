@@ -1,7 +1,8 @@
+import React from 'react'
 import { Grid } from '@mui/material'
 import PokemonItemSkeleton from './PokemonItemSkeleton'
 
-export default function SkeletonList({ itemsPerPage }) {
+function SkeletonList({ itemsPerPage }) {
   return (
     <Grid container spacing={3}>
       {Array.from(Array(itemsPerPage)).map((_, index) => (
@@ -12,3 +13,4 @@ export default function SkeletonList({ itemsPerPage }) {
     </Grid>
   )
 }
+export default React.memo(SkeletonList)

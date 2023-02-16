@@ -1,14 +1,20 @@
+import React from 'react'
 import { Grid } from '@mui/material'
 import PokemonItem from './PokemonItem'
 
-export default function PokemonsList(props) {
+function PokemonsList({ pokemons }) {
   return (
     <Grid container spacing={3}>
-      {Array.from(Array(10)).map((_, index) => (
-        <Grid item key={index} xs={12} sm={12} md={6} lg={4} xl={3}>
-          <PokemonItem />
+      {pokemons?.map((item, index) => (
+        <Grid item key={item.id} xs={12} sm={12} md={6} lg={4} xl={3}>
+          <PokemonItem
+            name={item.name}
+            avatar={item['sprites']['other']['home']['front_default']}
+            id={item.id}
+          />
         </Grid>
       ))}
     </Grid>
   )
 }
+export default React.memo(PokemonsList)

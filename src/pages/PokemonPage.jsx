@@ -1,10 +1,13 @@
+import React, { useEffect } from 'react'
 import { Button, Grid, Stack, Typography, Card } from '@mui/material'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export default function PokemonPage(props) {
   const navigate = useNavigate()
   const { id: pokemonId } = useParams()
-
+  useEffect(() => {
+    console.log('Hopme render')
+  }, [])
   return (
     <>
       <Stack direction="row" justifyContent="space-between" alignItems="center">

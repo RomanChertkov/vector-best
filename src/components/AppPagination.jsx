@@ -3,17 +3,18 @@ import { Typography, Pagination, Stack, Select, MenuItem } from '@mui/material'
 export default function AppPagination({
   itemsPerPage,
   currentPage,
+  totalApiItems,
   changePage,
   changeItemPerPage,
 }) {
   return (
     <Stack direction="row" justifyContent={'space-between'}>
       <Pagination
-        count={10}
+        count={totalApiItems}
         page={currentPage}
         size="large"
         color="primary"
-        onChange={(e, page) => changePage(page)}
+        onChange={(_, page) => changePage(page)}
       />
 
       <Stack direction="row" spacing={3} alignItems="center">
@@ -25,7 +26,7 @@ export default function AppPagination({
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={itemsPerPage}
-          onChange={(e, obj) => changeItemPerPage(obj)}
+          onChange={(_, obj) => changeItemPerPage(obj)}
           inputProps={{ 'aria-label': 'Without label' }}
           size="small"
         >
