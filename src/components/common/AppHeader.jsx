@@ -1,10 +1,6 @@
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import logo from '../assets/logo_pokeapi.png'
 import { Link } from 'react-router-dom'
+import { AppBar, Box, Toolbar, Typography, IconButton } from '@mui/material'
+import logo from '../../assets/img/logo_pokeapi.png'
 
 export default function AppHeader(props) {
   return (

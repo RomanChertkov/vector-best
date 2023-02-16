@@ -1,6 +1,6 @@
 import { List } from '@mui/material'
-import AccordionInfo from '../components/AccordionInfo'
-import ListItemBasic from '../components/ListItemsBasic'
+import AccordionInfo from './AccordionInfo'
+import ListItemBasic from './ListItemsBasic'
 
 export default function PokemonInfoAdditional({
   gameIndices,

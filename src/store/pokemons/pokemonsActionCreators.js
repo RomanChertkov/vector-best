@@ -1,5 +1,5 @@
 import * as pokemonsTypes from './pokemonTypes'
-import { pokeApi } from '../../api/api'
+import { pokeApi } from '../../api/pokeApi'
 import { setTotalApItems } from '../pagination/paginationActionCreators'
 
 export const setIsFetchingData = (flag) => ({

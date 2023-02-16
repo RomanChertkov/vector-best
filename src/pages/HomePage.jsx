@@ -6,9 +6,9 @@ import {
   setItemsPerPage,
 } from '../store/pagination/paginationActionCreators'
 import { getPokemonData } from '../store/pokemons/pokemonsActionCreators'
-import AppPagination from '../components/AppPagination'
-import PokemonsList from '../components/PokemonsList'
-import SkeletonList from '../components/SkeletonList'
+import AppPagination from '../components/common/AppPagination'
+import PokemonsList from '../components/Home/PokemonsList'
+import SkeletonList from '../components/Home/SkeletonList'
 
 export default function HomePage() {
   const dispatch = useDispatch()

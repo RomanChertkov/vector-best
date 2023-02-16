@@ -2,8 +2,6 @@ import axios from 'axios'
 
 const instance = axios.create({
   baseURL: 'https://pokeapi.co/api/v2/',
-
-  // timeout: 1000,
   headers: {},
 })
 
@@ -23,8 +21,8 @@ export const pokeApi = {
 
       const clearData = response2.map((item) => item.data)
       return { clearData, totalItemsCount }
-    } catch (e) {
-      return { error: 1, message: e.message }
+    } catch (err) {
+      return { error: 1, message: err.message }
     }
   },
 
@@ -32,6 +30,8 @@ export const pokeApi = {
     try {
       const result = await instance.get(`pokemon/${nameOrId}`)
       return result.data
-    } catch (error) {}
+    } catch (err) {
+      return { error: 1, message: err.message }
+    }
   },
 }

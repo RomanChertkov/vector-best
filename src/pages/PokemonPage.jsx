@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Button, Stack, Typography } from '@mui/material'
-import PokemonInfoBasic from '../components/PokemonInfoBasic'
-import PokemonInfoAdditional from '../components/PokemonInfoAdditional'
+import PokemonInfoBasic from '../components/PokemonItemPage/PokemonInfoBasic'
+import PokemonInfoAdditional from '../components/PokemonItemPage/PokemonInfoAdditional'
 
 export default function PokemonPage() {
   const navigate = useNavigate()
