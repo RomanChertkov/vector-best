@@ -29,8 +29,12 @@ export const pokeApi = {
   async getPokemonByNameOrId(nameOrId) {
     try {
       const result = await instance.get(`pokemon/${nameOrId}`)
+
       return result.data
     } catch (err) {
+      if (err.code == 404) {
+        return { error: 1, message: 'Pokemon not found' }
+      }
       return { error: 1, message: err.message }
     }
   },

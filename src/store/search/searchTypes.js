@@ -1,0 +1,4 @@
+export const SET_IS_SEARCH_MODAL_OPEN = 'search/SET_IS_SEARCH_MODAL_OPEN'
+export const SET_ONE_POKEMON_DATA = 'search/SET_POKEMONS_DATA'
+export const SET_IS_SEARCHING = 'search/SET_IS_SEARCHING'
+export const SET_SEARCHING_ERROR = 'search/SET_SEARCHING_ERROR'

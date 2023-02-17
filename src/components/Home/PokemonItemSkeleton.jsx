@@ -5,7 +5,7 @@ export default function PokemonItemSkeleton(props) {
     <Card sx={{ width: '100%' }}>
       <CardContent>
         <Stack spacing={2}>
-          <Grid container alignItems="center">
+          {/* <Grid container alignItems="center">
             <Grid item xs={3}>
               <Skeleton variant="circular" width={50} height={50} />
             </Grid>
@@ -16,7 +16,8 @@ export default function PokemonItemSkeleton(props) {
                 sx={{ fontSize: '1rem' }}
               />
             </Grid>
-          </Grid>
+          </Grid> */}
+          <Skeleton variant="rectangular" width={'100%'} sx={{ height: 200 }} />
           <Stack spacing={1}>
             <Skeleton variant="text" width={'100%'} sx={{ fontSize: '1rem' }} />
             <Skeleton variant="text" width={'100%'} sx={{ fontSize: '1rem' }} />

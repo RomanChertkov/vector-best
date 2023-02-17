@@ -1,16 +1,37 @@
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Button, Stack, Typography } from '@mui/material'
 import PokemonInfoBasic from '../components/PokemonItemPage/PokemonInfoBasic'
 import PokemonInfoAdditional from '../components/PokemonItemPage/PokemonInfoAdditional'
+import {
+  getOnePokemonData,
+  setIsOpenSearchModal,
+} from '../store/search/searchActionCreators'
 
 export default function PokemonPage() {
   const navigate = useNavigate()
   const { id: pokemonId } = useParams()
+  const dispatch = useDispatch()
   const { pokemons } = useSelector((state) => state.pokemons)
+  const { onePokemon } = useSelector((state) => state.search)
 
-  const currentPokemon = pokemons.filter((item) => item.id == pokemonId)[0]
+  useEffect(() => {
+    dispatch(setIsOpenSearchModal(false))
+  }, [])
+  useEffect(() => {
+    dispatch(setIsOpenSearchModal(false))
+  }, [pokemonId])
+
+  let currentPokemon
+  if (pokemons.length != 0 && onePokemon.id == pokemonId) {
+    currentPokemon = onePokemon
+  } else if (!pokemons.length) {
+    currentPokemon = onePokemon
+  } else {
+    currentPokemon = pokemons.filter((item) => item.id == pokemonId)[0]
+  }
+
   const {
     name,
     sprites,

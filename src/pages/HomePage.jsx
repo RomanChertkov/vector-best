@@ -9,6 +9,7 @@ import { getPokemonsData } from '../store/pokemons/pokemonsActionCreators'
 import AppPagination from '../components/common/AppPagination'
 import PokemonsList from '../components/Home/PokemonsList'
 import SkeletonList from '../components/Home/SkeletonList'
+import { setOnePokemonData } from '../store/search/searchActionCreators'
 
 export default function HomePage() {
   const dispatch = useDispatch()
@@ -19,6 +20,7 @@ export default function HomePage() {
 
   useEffect(() => {
     dispatch(getPokemonsData(currentPage, itemsPerPage))
+    dispatch(setOnePokemonData({}))
   }, [])
 
   useEffect(() => {
