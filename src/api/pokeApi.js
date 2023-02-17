@@ -32,7 +32,7 @@ export const pokeApi = {
 
       return result.data
     } catch (err) {
-      if (err.code == 404) {
+      if (err.code == 'ERR_BAD_REQUEST') {
         return { error: 1, message: 'Pokemon not found' }
       }
       return { error: 1, message: err.message }

@@ -27,7 +27,6 @@ export const getOnePokemonData = (nameOrId) => async (dispatch) => {
     dispatch(setIsSearching(true))
     const response = await pokeApi.getPokemonByNameOrId(nameOrId)
     if (response.error) {
-      //debugger
       dispatch(setSearchingError(response.message))
     }
     dispatch(setOnePokemonData(response))

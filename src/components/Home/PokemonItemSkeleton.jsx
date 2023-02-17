@@ -1,22 +1,10 @@
-import { Card, CardContent, Grid, Skeleton, Stack } from '@mui/material'
+import { Card, CardContent, Skeleton, Stack } from '@mui/material'
 
-export default function PokemonItemSkeleton(props) {
+export default function PokemonItemSkeleton() {
   return (
     <Card sx={{ width: '100%' }}>
       <CardContent>
         <Stack spacing={2}>
-          {/* <Grid container alignItems="center">
-            <Grid item xs={3}>
-              <Skeleton variant="circular" width={50} height={50} />
-            </Grid>
-            <Grid item xs={9}>
-              <Skeleton
-                variant="text"
-                width={'100%'}
-                sx={{ fontSize: '1rem' }}
-              />
-            </Grid>
-          </Grid> */}
           <Skeleton variant="rectangular" width={'100%'} sx={{ height: 200 }} />
           <Stack spacing={1}>
             <Skeleton variant="text" width={'100%'} sx={{ fontSize: '1rem' }} />
